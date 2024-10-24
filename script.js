@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     "center text-center text-light bg-black shadow fs-5 p-4");
 
     this.body.prepend(div);
-    pre.setAttribute("class", "fs-5 m-5");
+    pre.setAttribute("class", "fs-6 m-5");
     pre.style.columnCount = pre.getAttribute("columns");
     pre.style.columnGap   = "30px";
     pre.style.whiteSpace  = "pre-wrap";
