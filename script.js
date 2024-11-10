@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function (e) {
     const pre = this.querySelector("pre");
     const div = this.createElement("div");
-    const src = "https://github.com/leandro-sciola/cifras/raw/refs/heads/main" +
-    window.location.pathname.split("cifras").pop().split("html")[0] + "m4a";
+    const src = "https://github.com/leandro-sciola/Cifras/raw/refs/heads/main" +
+    window.location.pathname.split("Cifras").pop().split("html")[0] + "m4a";
 
     div.innerHTML = '<a class="link-light me-3" href="../index.html">'         +
     '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="cur' +
