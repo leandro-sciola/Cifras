@@ -31,3 +31,6 @@ echo '<!DOCTYPE html>
     <script src="../script.js"></script>
   </body>
 </html>' > $_SINGER/$_SONG.html
+
+jo -f data.json -p -d . \
+    "$SINGER.$_SINGER/$_SONG=$SONG" -o data.json
