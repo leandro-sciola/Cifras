@@ -7,132 +7,45 @@
     <title>Cifras</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css">
+    <script type="text/javascript">
+    function include(file, callback) {
+        fetch(file)
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`HTTP error! Status: ${res.status}`);
+            }
+            return res.json();
+        })
+        .then(data => callback(null, data))
+        .catch(error => callback(error, null));
+    }
+    include("https://leandro-sciola.github.io/Cifras/data.json",
+    (error, data) => {
+        if (data) {
+            var span = document.createElement("span");
+            var tags = "";
+            Object.keys(data).forEach(function (singer) {
+                tags += '<h5 class="bg-secondary-subtle p-3">' +
+                '<i class="bi bi-person-circle me-2"></i>' + singer +
+                '</h5><ul class="list-unstyled p-3">';
+                Object.values(data[singer]).forEach(function (song) {
+                    tags += '<li><a href="chintya-gabriella/goodness-of-god.html">' + song + '</a></li>';
+                });
+                tags += '</ul>';
+                span.innerHTML = tags;
+            });
+            document.getElementById("cifras").appendChild(span);
+        }
+    });
+    </script>
   </head>
   <body class="bg-dark-subtle">
     <div class="container">
       <div class="row">
-        <div class="col bg-white shadow m-2 p-4">
+        <div class="col bg-white shadow m-2 p-4" id="cifras">
           <h3 class="fw-bold text-center my-4">
             <i class="bi bi-music-note-beamed me-2"></i>Cifras
           </h3>
-          <hr>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Chintya Gabriella
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="chintya-gabriella/goodness-of-god.html">Goodness of God</a></li>
-          </ul>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Elias Souza
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="elias-souza/deus-dara-de-volta-tudo-pra-voce.html">Deus Dará de Volta Tudo Pra Você</a></li>
-          </ul>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Eli Soares
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="eli-soares/mais-que-o-mundo.html">Mais Que o Mundo</a></li>
-          </ul>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Gabriela Rocha
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="gabriela-rocha/aguas-purificadoras.html">Águas Purificadoras</a></li>
-            <li><a href="gabriela-rocha/bondade-de-deus.html">Bondade de Deus</a></li>
-            <li><a href="gabriela-rocha/estrela-da-manha.html">Estrela da Manhã</a></li>
-            <li><a href="gabriela-rocha/o-mover-do-espirito.html">O Mover do Espirito</a></li>
-            <li><a href="gabriela-rocha/os-sonhos-de-deus.html">Os Sonhos de Deus</a></li>
-          </ul>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Giselli Cristina
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="giselli-cristina/bondade-de-deus.html">Bondade de Deus</a></li>
-            <li><a href="giselli-cristina/ditosa-cidade.html">Ditosa Cidade</a></li>
-            <li><a href="giselli-cristina/em-adoracao.html">Em Adoração</a></li>
-            <li><a href="giselli-cristina/eu-falo-jesus.html">Eu Falo Jesus</a></li>
-            <li><a href="giselli-cristina/eu-queria-ir-pra-la.html">Eu Queria Ir Pra Lá</a></li>
-            <li><a href="giselli-cristina/eu-te-amo-tanto.html">Eu Te Amo Tanto</a></li>
-            <li><a href="giselli-cristina/meu-mestre.html">Meu Mestre</a></li>
-            <li><a href="giselli-cristina/nunca-mais.html">Nunca Mais</a></li>
-            <li><a href="giselli-cristina/o-grande-eu-sou.html">O Grande Eu Sou</a></li>
-            <li><a href="giselli-cristina/os-sonhos-de-deus.html">Os Sonhos de Deus</a></li>
-            <li><a href="giselli-cristina/portoes-celestiais.html">Portões Celestiais</a></li>
-          </ul>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Isabela Berte
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="isabela-berte/acalma-o-meu-coracao.html">Acalma o Meu Coração</a></li>
-          </ul>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Manu Paiva
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="manu-paiva/nada-pode-calar-um-adorador.html">Nada Pode Calar Um Adorador</a></li>
-          </ul>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Mariana Aguiar
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="mariana-aguiar/eu-te-amo-tanto.html">Eu Te Amo Tanto</a></li>
-            <li><a href="mariana-aguiar/jesus-eh-o-caminho.html">Jesus é o Caminho</a></li>
-            <li><a href="mariana-aguiar/o-escudo.html">O Escudo</a></li>
-          </ul>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Matheus e Laisa
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="matheus-e-laisa/bencaos-que-nao-tem-fim.html">Bênçãos que não tem fim</a></li>
-          </ul>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Matheus Rizzo
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="matheus-rizzo/nao-tardara-cristo-ira-voltar.html">Não Tardará Cristo Irá Voltar</a></li>
-          </ul>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Nicolly Sena
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="nicolly-sena/aguas-purificadoras.html">Águas Purificadoras</a></li>
-            <li><a href="nicolly-sena/ao-unico.html">Ao Único</a></li>
-            <li><a href="nicolly-sena/me-derramar.html">Me Derramar</a></li>
-          </ul>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Paula Rebouças
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="paula-reboucas/jeova-jireh.html">Jeová Jireh</a></li>
-          </ul>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Som Divino
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="som-divino/hino-da-vitoria.html">Hino da Vitória</a></li>
-          </ul>
-
-          <h5 class="bg-secondary-subtle p-3">
-            <i class="bi bi-person-circle me-2"></i>Ynara Catino
-          </h5>
-          <ul class="list-unstyled p-3">
-            <li><a href="ynara-catino/o-escudo.html">O Escudo</a></li>
-          </ul>
-
         </div>
       </div>
     </div>
