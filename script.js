@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function (e) {
-    const pre = this.querySelector("pre");
-    const div = this.createElement("div");
-    const src = "https://github.com/leandro-sciola/Cifras/raw/refs/heads/main" +
-    window.location.pathname.split("Cifras").pop().split("html")[0] + "m4a";
+    const repo = "Cifras";
+    const file = window.location.pathname.split(repo).pop().split("html")[0];
+    const pre  = this.querySelector("pre");
+    const div  = this.createElement("div");
+    const src  = "https://raw.githubusercontent.com/leandro-sciola/" + repo +
+                 "/refs/heads/main" + file + "m4a";
 
     div.innerHTML = '<a class="link-light me-3" href="../index.html">'         +
     '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="cur' +

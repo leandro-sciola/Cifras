@@ -25,24 +25,27 @@
                   .toLowerCase()
                   .replace(/\s/g, "-");
     }
+    function index(data) {
+        const col = document.getElementsByClassName("col")[0];
+        var item  = '<h3 class="fw-bold text-center my-4">' +
+                    '<i class="bi bi-music-note-beamed me-2"></i>' +
+                    document.title + '</h3>';
+        Object.keys(data).forEach(function (singer) {
+            item += '<h5 class="bg-secondary-subtle p-3">' +
+            '<i class="bi bi-person-circle me-2"></i>' + singer +
+            '</h5><ul class="list-unstyled p-3">';
+            Object.values(data[singer]).forEach(function (song) {
+                item += '<li><a href="' + normalize(singer) + '/' +
+                normalize(song) + '.html">' + song + '</a></li>';
+            });
+            item += '</ul>';
+        });
+        col.innerHTML = item;
+    }
     include("https://leandro-sciola.github.io/Cifras/data.json",
     (error, data) => {
         if (data) {
-            const col = document.getElementsByClassName("col")[0];
-            var item  = '<h3 class="fw-bold text-center my-4">' +
-                        '<i class="bi bi-music-note-beamed me-2"></i>' +
-                        document.title + '</h3>';
-            Object.keys(data).forEach(function (singer) {
-                item += '<h5 class="bg-secondary-subtle p-3">' +
-                '<i class="bi bi-person-circle me-2"></i>' + singer +
-                '</h5><ul class="list-unstyled p-3">';
-                Object.values(data[singer]).forEach(function (song) {
-                    item += '<li><a href="' + normalize(singer) + '/' +
-                    normalize(song) + '.html">' + song + '</a></li>';
-                });
-                item += '</ul>';
-            });
-            col.innerHTML = item;
+            index(data);
         }
     });
     </script>
