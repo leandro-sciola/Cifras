@@ -33,4 +33,4 @@ echo '<!DOCTYPE html>
 </html>' > $_SINGER/$_SONG.html
 
 jo -f data.json -p -d . \
-    "$SINGER.$_SINGER/$_SONG=$SONG" -o data.json
+    "$SINGER[]=$SONG" -o data.json
