@@ -19,6 +19,12 @@
         .then(data => callback(null, data))
         .catch(error => callback(error, null));
     }
+    function normalize(str) {
+        return str.normalize("NFD")
+                  .replace(/[^a-zA-Z0-9\s]/g, "")
+                  .toLowerCase()
+                  .replace(/\s/g, "-");
+    }
     include("https://leandro-sciola.github.io/Cifras/data.json",
     (error, data) => {
         if (data) {
@@ -29,7 +35,8 @@
                 '<i class="bi bi-person-circle me-2"></i>' + singer +
                 '</h5><ul class="list-unstyled p-3">';
                 Object.values(data[singer]).forEach(function (song) {
-                    tags += '<li><a href="chintya-gabriella/goodness-of-god.html">' + song + '</a></li>';
+                    tags += '<li><a href="' + normalize(singer) + '/' +
+                    normalize(song) + '.html">' + song + '</a></li>';
                 });
                 tags += '</ul>';
                 span.innerHTML = tags;
